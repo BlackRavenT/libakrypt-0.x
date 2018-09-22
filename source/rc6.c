@@ -441,50 +441,50 @@ ak_bool ak_bckey_test_rc6(void)
     if(audit >= ak_log_maximum)
         ak_error_message(ak_error_ok, __func__ ,
                 "the one block decryption test of RC6 is Ok");
-
-    /* 3. Тестируем режим простой замены                                                         */
-    if((error = ak_bckey_context_encrypt_ecb(&bkey, inlong, myout, 64)) != ak_error_ok)
-    {
-        ak_error_message_fmt(error, __func__ , "wrong ecb mode encryption");
-        ak_bckey_destroy(&bkey);
-        return ak_false;
-    }
-    if(!ak_ptr_is_equal(myout, outecb, 64))
-    {
-        ak_error_message_fmt(ak_error_not_equal_data, __func__ ,
-                "the ecb mode encryption test of RC6 is wrong");
-        ak_log_set_message(str = ak_ptr_to_hexstr(myout, 64, ak_true);
-        free(str);
-        ak_log_set_message(str = ak_ptr_to_hexstr(outecb, 64, ak_true));
-        free(str);
-        ak_bckey_destroy(&bkey);
-        return ak_false;
-    }
-    if(audit >= ak_log_maximum)
-        ak_error_message(ak_error_ok, __func__ ,
-                "the ecb mode encryption test of RC6 is Ok");
-
-    if((error = ak_bckey_context_decrypt_ecb(&bkey, outecb, myout, 64)) != ak_error_ok)
-    {
-        ak_error_message_fmt(error, __func__ , "wrong ecb mode decryption");
-        ak_bckey_destroy(&bkey);
-        return ak_false;
-    }
-    if(!ak_ptr_is_equal(myout, inlong, 64))
-    {
-        ak_error_message_fmt(ak_error_not_equal_data, __func__ ,
-                "the ecb mode decryption test of RC6 is wrong");
-        ak_log_set_message(str = ak_ptr_to_hexstr(myout, 64, ak_true));
-        free(str);
-        ak_log_set_message(str = ak_ptr_to_hexstr(inlong, 64, ak_true));
-        free(str);
-        ak_bckey_destroy(&bkey);
-        return ak_false;
-    }
-    if(audit >= ak_log_maximum)
-        ak_error_message(ak_error_ok, __func__ ,
-                "the ecb mode decryption test of RC6 is Ok");
-
+//
+//    /* 3. Тестируем режим простой замены                                                         */
+//    if((error = ak_bckey_context_encrypt_ecb(&bkey, inlong, myout, 64)) != ak_error_ok)
+//    {
+//        ak_error_message_fmt(error, __func__ , "wrong ecb mode encryption");
+//        ak_bckey_destroy(&bkey);
+//        return ak_false;
+//    }
+//    if(!ak_ptr_is_equal(myout, outecb, 64))
+//    {
+//        ak_error_message_fmt(ak_error_not_equal_data, __func__ ,
+//                "the ecb mode encryption test of RC6 is wrong");
+//        ak_log_set_message(str = ak_ptr_to_hexstr(myout, 64, ak_true);
+//        free(str);
+//        ak_log_set_message(str = ak_ptr_to_hexstr(outecb, 64, ak_true));
+//        free(str);
+//        ak_bckey_destroy(&bkey);
+//        return ak_false;
+//    }
+//    if(audit >= ak_log_maximum)
+//        ak_error_message(ak_error_ok, __func__ ,
+//                "the ecb mode encryption test of RC6 is Ok");
+//
+//    if((error = ak_bckey_context_decrypt_ecb(&bkey, outecb, myout, 64)) != ak_error_ok)
+//    {
+//        ak_error_message_fmt(error, __func__ , "wrong ecb mode decryption");
+//        ak_bckey_destroy(&bkey);
+//        return ak_false;
+//    }
+//    if(!ak_ptr_is_equal(myout, inlong, 64))
+//    {
+//        ak_error_message_fmt(ak_error_not_equal_data, __func__ ,
+//                "the ecb mode decryption test of RC6 is wrong");
+//        ak_log_set_message(str = ak_ptr_to_hexstr(myout, 64, ak_true));
+//        free(str);
+//        ak_log_set_message(str = ak_ptr_to_hexstr(inlong, 64, ak_true));
+//        free(str);
+//        ak_bckey_destroy(&bkey);
+//        return ak_false;
+//    }
+//    if(audit >= ak_log_maximum)
+//        ak_error_message(ak_error_ok, __func__ ,
+//                "the ecb mode decryption test of RC6 is Ok");
+//
 /*    /* 4. Тестируем режим гаммирования (счетчика) согласно ГОСТ Р34.13-2015
 //    if(( error = ak_bckey_context_xcrypt( &bkey, inlong, myout, 64, ivctr, 8 )) != ak_error_ok ) {
 //        ak_error_message_fmt( error, __func__ , "wrong counter mode encryption" );

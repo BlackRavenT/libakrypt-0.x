@@ -441,8 +441,8 @@ ak_bool ak_bckey_test_rc6(void)
     if(audit >= ak_log_maximum)
         ak_error_message(ak_error_ok, __func__ ,
                 "the one block decryption test of RC6 is Ok");
-//
-//    /* 3. Тестируем режим простой замены                                                         */
+
+/*    /* 3. Тестируем режим простой замены
 //    if((error = ak_bckey_context_encrypt_ecb(&bkey, inlong, myout, 64)) != ak_error_ok)
 //    {
 //        ak_error_message_fmt(error, __func__ , "wrong ecb mode encryption");
@@ -485,7 +485,7 @@ ak_bool ak_bckey_test_rc6(void)
 //        ak_error_message(ak_error_ok, __func__ ,
 //                "the ecb mode decryption test of RC6 is Ok");
 //
-/*    /* 4. Тестируем режим гаммирования (счетчика) согласно ГОСТ Р34.13-2015
+//    /* 4. Тестируем режим гаммирования (счетчика) согласно ГОСТ Р34.13-2015
 //    if(( error = ak_bckey_context_xcrypt( &bkey, inlong, myout, 64, ivctr, 8 )) != ak_error_ok ) {
 //        ak_error_message_fmt( error, __func__ , "wrong counter mode encryption" );
 //        ak_bckey_destroy( &bkey );

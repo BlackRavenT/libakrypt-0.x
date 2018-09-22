@@ -403,7 +403,7 @@ ak_bool ak_bckey_test_rc6(void)
         return ak_false;
     }
 
-    if((error = ak_bckey_context_set_ptr(&bkey, testkey, sizeof(testkey), ak_false )) != ak_error_ok)
+    if((error = ak_bckey_context_set_ptr(&bkey, testkey, sizeof(testkey), ak_false)) != ak_error_ok)
     {
         ak_error_message(ak_error_get_value(), __func__, "wrong creation of test key");
         return ak_false;
@@ -411,7 +411,7 @@ ak_bool ak_bckey_test_rc6(void)
 
     /* 2. Тестируем зашифрование/расшифрование одного блока                                         */
     bkey.encrypt(&bkey.key, in, myout);
-    if(!ak_ptr_is_equal( myout, out, 16 ))
+    if(!ak_ptr_is_equal( myout, out, 16))
     {
         ak_error_message_fmt(ak_error_not_equal_data, __func__ ,
                 "the one block encryption test of RC6 is wrong");

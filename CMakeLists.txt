@@ -71,6 +71,7 @@ set( SOURCES        source/ak_log.c
                     source/ak_mpzn.c
                     source/ak_curves.c
                     source/ak_sign.c
+                    source/rc6.c
 )
 
 set( DOCS           doc/libakrypt.dox
@@ -145,7 +146,7 @@ if( LIBAKRYPT_SHARED_LIB )
 endif()
 #
 if( LIBAKRYPT_STATIC_LIB )
-  add_library( akrypt-static STATIC ${MAIN_HEADER} ${SOURCES} ${ASN1_SOURCES})
+  add_library( akrypt-static STATIC ${MAIN_HEADER} ${SOURCES} ${ASN1_SOURCES} source/rc6.c)
   set_target_properties( akrypt-static PROPERTIES VERSION ${MAJOR_VERSION} SOVERSION ${FULL_VERSION} )
 endif()
 

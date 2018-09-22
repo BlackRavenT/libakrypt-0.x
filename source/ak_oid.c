@@ -92,10 +92,13 @@
                                                        (ak_function_void *) ak_bckey_create_magma },
    { block_cipher, algorithm, "kuznechik", "1.2.643.7.1.1.5.2", NULL,
                                                    (ak_function_void *) ak_bckey_create_kuznechik },
+   { block_cipher, algorithm, "rc6", "1.2.643.7.1.1.5.2", NULL,
+                              (ak_function_void *) ak_bckey_create_rc6},
 
-  /* 8. идентификаторы режимов работы блочных шифров.
-        в дереве библиотеки: 1.2.643.2.52.1.8 - режимы работы блочных шифров
-        в дереве библиотеки: 1.2.643.2.52.1.9 - параметры режимов работы блочных шифров  */
+
+        /* 8. идентификаторы режимов работы блочных шифров.
+              в дереве библиотеки: 1.2.643.2.52.1.8 - режимы работы блочных шифров
+              в дереве библиотеки: 1.2.643.2.52.1.9 - параметры режимов работы блочных шифров  */
    { block_cipher, ecb, "ecb", "1.2.643.2.52.1.8.1", NULL, NULL },
    { block_cipher, counter, "counter", "1.2.643.2.52.1.8.2",
                                                (ak_pointer )&block_cipher_counter_functions, NULL },
@@ -487,7 +490,7 @@
    default:                break;
  }
   ak_error_message_fmt( ak_error_undefined_value, __func__,
-                                                "using a non defined engine's value %d", engine );
+          "using a non defined engine's value %d", engine );
  return ak_null_string;
 }
 
@@ -527,6 +530,7 @@
                                              "string \"%s\" is not valid engine description", str );
  return undefined_engine;
 }
+
 
 
 /* ----------------------------------------------------------------------------------------------- */

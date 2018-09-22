@@ -41,5 +41,6 @@ else()
   try_append_c_flag( "-march=native" CMAKE_C_FLAGS )
   try_append_c_flag( "-std=c11" CMAKE_C_FLAGS )
   try_append_c_flag( "-pipe" CMAKE_C_FLAGS )
+  try_append_c_flag( "-my_RC6" CMAKE_C_FLAGS )
 endif()
 # -------------------------------------------------------------------------------------------------- #

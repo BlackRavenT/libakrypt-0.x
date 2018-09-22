@@ -581,6 +581,14 @@
     return ak_false;
   }
 
+  /* тестируем корректность реализации блочного шифра RC6 */
+  if( ak_bckey_test_rc6()  != ak_true )
+  {
+      ak_error_message( ak_error_get_value(), __func__ ,
+              "incorrect testing of RC6 block cipher" );
+      return ak_false;
+  }
+
   if( audit >= ak_log_maximum )
    ak_error_message( ak_error_ok, __func__ , "testing block ciphers ended successfully" );
 

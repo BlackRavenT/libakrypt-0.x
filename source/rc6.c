@@ -241,6 +241,7 @@ static int rc6_remask_xor(ak_skey skey)
 /*! \brief Функция зашифрования блока */
 static void rc6_encrypt(ak_skey skey, ak_pointer in, ak_pointer out)
 {
+
     int       i = 0;
     ak_uint32 v = 0, u = 0, t = 0;
     struct rc6_expanded_keys *ekey = &((struct rc6_ctx *) skey->data)->encryptkey;
